@@ -1,0 +1,32 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #3C3D37;
+    /*color: white;*/
+}
+
+.main-image {
+    height: 60vh;
+    border-radius: 20px;
+    filter: drop-shadow(0px, 0px, 10px, rgba(0, 0, 0, 0.3));
+    margin: 40px;
+    transition: filter 0.5s ease;
+}
+
+    .main-image:hover {
+        filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.3)) brightness(0.5); /* Darkens the image */
+    }

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mafia-Razor-Pages", "Mafia-Razor-Pages\Mafia-Razor-Pages.csproj", "{F4642A47-7C8A-4807-AF9D-9EE0244F3C61}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4642A47-7C8A-4807-AF9D-9EE0244F3C61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4642A47-7C8A-4807-AF9D-9EE0244F3C61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4642A47-7C8A-4807-AF9D-9EE0244F3C61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4642A47-7C8A-4807-AF9D-9EE0244F3C61}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F49FEB0D-9B34-47C5-8352-2855171EE64A}
+	EndGlobalSection
+EndGlobal
