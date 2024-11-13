@@ -23,7 +23,7 @@ namespace Mafia_Razor_Pages.Pages.Forms
             // Fetch characters if needed
         }
 
-        public void OnPost()
+        public IActionResult OnPost()
         {
             if (!string.IsNullOrWhiteSpace(Character))
             {
@@ -32,6 +32,7 @@ namespace Mafia_Razor_Pages.Pages.Forms
             }
 
             // Redirect to refresh the list on the page
+            return RedirectToPage();
         }
     }
 }
