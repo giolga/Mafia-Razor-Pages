@@ -13,5 +13,7 @@ namespace Mafia_Razor_Pages.Models
         public byte? Age { get; set; }
         public string? PhoneNumber { get; set; }
         public string? Gmail { get; set; }
+        // added later! Seat number on the table
+        public byte SeatNumber { get; set; }
     }
 }

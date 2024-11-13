@@ -1,4 +1,5 @@
 using Mafia_Razor_Pages.Data;
+using Mafia_Razor_Pages.Models;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,7 @@ builder.Services.AddDbContext<AppDbContext>(
             options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
         }
     );
+builder.Services.AddSingleton<CharacterService>();
 
 var app = builder.Build();
 
