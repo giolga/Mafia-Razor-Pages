@@ -6,9 +6,9 @@ namespace Mafia_Razor_Pages.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Name is required!")]
         public string Name { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Surname is required!")]
         public string Surname { get; set; }
         public byte? Age { get; set; }
         public string? PhoneNumber { get; set; }

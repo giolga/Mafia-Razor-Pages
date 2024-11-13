@@ -8,15 +8,27 @@
     <h2>Player Registration</h2>
 
     <form method="post" class="mx-auto mt-5 mb-5 px-5 pt-5 pb-5 rounded-5 alert-light col-4">
+        @* <div asp-validation-summary="ModelOnly" class="text-danger"></div> *@
+
         <div class="register-user">
+            <span asp-validation-for="player.Name" class="text-danger"></span>
+            <br/>
             <input type="text" class="mt-1" asp-for="player.Name" placeholder="Name" />
             <br />
+
+            <span asp-validation-for="player.Surname" class="text-danger"></span>
             <input type="text" class="mt-1" asp-for="player.Surname" placeholder="Surname" />
             <br />
+
+            <span asp-validation-for="player.Age" class="text-danger"></span>
             <input type="number" class="mt-1" asp-for="player.Age" placeholder="Age" />
             <br />
+
+            <span asp-validation-for="player.PhoneNumber" class="text-danger"></span>
             <input type="tel" class="mt-1" asp-for="player.PhoneNumber" placeholder="Phone Number" />
             <br />
+
+            <span asp-validation-for="player.Gmail" class="text-danger"></span>
             <input type="email" class="mt-1" asp-for="player.Gmail" placeholder="Gmail" />
             <br />
         </div>
@@ -25,4 +37,12 @@
             <button class="btn btn-primary mt-1" type="submit">Register User</button>
         </div>
     </form>
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+
+
 </div>

@@ -30,3 +30,8 @@ body {
     .main-image:hover {
         filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.3)) brightness(0.5); /* Darkens the image */
     }
+
+.text-danger {
+    font-size: 0.9em;
+    margin-bottom: 0.3em;
+}
