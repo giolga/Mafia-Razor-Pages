@@ -14,6 +14,7 @@ namespace Mafia_Razor_Pages.Models
         public string? PhoneNumber { get; set; }
         public string? Gmail { get; set; }
         // added later! Seat number on the table
-        public byte SeatNumber { get; set; }
+        public byte SeatNumber { get; set; } = 0;
+        public string? Character { get; set; } = null;
     }
 }

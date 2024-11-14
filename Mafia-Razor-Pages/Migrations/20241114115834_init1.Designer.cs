@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Mafia_Razor_Pages.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241112151605_inital1")]
-    partial class inital1
+    [Migration("20241114115834_init1")]
+    partial class init1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -37,6 +37,9 @@ namespace Mafia_Razor_Pages.Migrations
 
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("TEXT");
+
+                    b.Property<byte>("SeatNumber")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Surname")
                         .IsRequired()

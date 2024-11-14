@@ -4,7 +4,7 @@
 
 namespace Mafia_Razor_Pages.Migrations
 {
-    public partial class inital1 : Migration
+    public partial class init1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -18,7 +18,8 @@ namespace Mafia_Razor_Pages.Migrations
                     Surname = table.Column<string>(type: "TEXT", nullable: false),
                     Age = table.Column<byte>(type: "INTEGER", nullable: true),
                     PhoneNumber = table.Column<string>(type: "TEXT", nullable: true),
-                    Gmail = table.Column<string>(type: "TEXT", nullable: true)
+                    Gmail = table.Column<string>(type: "TEXT", nullable: true),
+                    SeatNumber = table.Column<byte>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {

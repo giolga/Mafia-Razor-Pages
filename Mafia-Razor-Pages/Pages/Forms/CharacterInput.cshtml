@@ -4,16 +4,17 @@
 }
 
 <section>
-    <form method="post" class="mx-auto mt-5 mb-5 px-5 pt-5 pb-5 rounded-5 alert-light col-4">
+    <form id="characterForm" method="post" class="mx-auto mt-5 mb-5 px-5 pt-5 pb-5 rounded-5 alert-light col-4">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
         <div class="register-character">
             <span asp-validation-for="Character" class="text-danger"></span>
             <input type="text" class="mt-1" asp-for="Character" placeholder="Character" />
             <br />
+            <label>Players: <span id="playerCount">@Model.NumberOfPlayers</span></label>
         </div>
 
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-left">
             <button class="btn btn-primary mt-1" type="submit">Register User</button>
         </div>
     </form>
