@@ -10,37 +10,54 @@ namespace Mafia_Razor_Pages.Pages.Forms
     {
         private readonly CharacterService _characterService;
         private readonly AppDbContext _context;
+
         public List<string> Characters => _characterService.Characters.ToList();
 
         [BindProperty]
         public string Character { get; set; }
-        [BindProperty]
-        public byte NumberOfPlayers { get; set; }
+
+        public byte RemainingSlots { get; private set; }
 
         public CharacterInputModel(CharacterService characterService, AppDbContext context)
         {
-            this._characterService = characterService;
-            this._context = context;
-            NumberOfPlayers = (byte)_context.Players.Count();
+            _characterService = characterService;
+            _context = context;
         }
-
 
         public void OnGet()
         {
-            // Fetch characters if needed
+            UpdateRemainingSlots();
         }
 
-        public void OnPost()
+        public IActionResult OnPost()
         {
-            if (!string.IsNullOrWhiteSpace(Character) && NumberOfPlayers > 0)
+            UpdateRemainingSlots();
+
+            // Validation: Check if character is empty
+            if (string.IsNullOrWhiteSpace(Character))
             {
-                _characterService.Characters.Add(Character);
-                NumberOfPlayers--;
-                Console.WriteLine(_characterService.Characters.Count + " " + NumberOfPlayers);
+                ModelState.AddModelError(nameof(Character), "Character name is required.");
+                return Page();
             }
 
-            // Redirect to refresh the list on the page
-            //return Page();
+            // Validation: Check if slots are full
+            if (RemainingSlots <= 0)
+            {
+                ModelState.AddModelError(nameof(Character), "No slots remaining to add a new character.");
+                return Page();
+            }
+
+            // Add the character if validations pass
+            _characterService.Characters.Add(Character);
+
+            // Redirect to refresh the page and update UI
+            return RedirectToPage();
+        }
+
+        private void UpdateRemainingSlots()
+        {
+            var totalPlayers = (byte)_context.Players.Count();
+            RemainingSlots = (byte)(totalPlayers - _characterService.Characters.Count);
         }
     }
 }
