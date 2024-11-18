@@ -1,48 +1,4 @@
-﻿@* @page
-@model Mafia_Razor_Pages.Pages.Forms.CharacterInputModel
-@{
-
-}
-
-<section>
-    <form method="post" class="mx-auto mt-5 mb-5 px-5 pt-5 pb-5 rounded-5 alert-light col-4">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-        <div class="register-character">
-            <span asp-validation-for="Character" class="text-danger"></span>
-            <input type="text" class="mt-1" asp-for="Character" placeholder="Character" />
-            <br />
-            <label>Remaining Slots: <span>@Model.RemainingSlots</span></label>
-        </div>
-
-        <div class="d-flex justify-content-left">
-            <button class="btn btn-primary mt-1" type="submit">Register Character</button>
-        </div>
-    </form>
-</section>
-
-<section>
-    <h3>Characters</h3>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Character</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var character in Model.Characters)
-            {
-                <tr>
-                    <td>@character</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-</section>
- *@
-
- @page
+﻿@page
 @model Mafia_Razor_Pages.Pages.Forms.CharacterInputModel
 @{
 }
@@ -109,110 +65,239 @@
             transform: translateY(-50%);
         }
 
-            .spin-container .spinBtn {
+        .spin-container .spinBtn {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-color: #fff;
+            border-radius: 50%;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #333;
+            letter-spacing: 0.1em;
+            border: rgba(0, 0, 0, 0.75);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* .spin-container .spinBtn::before {
+                                content: '';
+                                position: absolute;
+                                top: -28px;
+                                width: 20px;
+                                height: 30px;
+                                background: #fff;
+                                clip-path: polygon(50% 0%, 15% 100%, 85% 100%);
+                            } */
+
+        .spin-container .wheel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #333;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 0 5px #333, 0 0 0 15px #fff, 0 0 0 18px #111;
+            transition: transform 5s ease-in-out;
+        }
+
+            .spin-container .wheel .number {
                 position: absolute;
-                width: 60px;
-                height: 60px;
-                background-color: #fff;
-                border-radius: 50%;
-                z-index: 10;
+                width: 50%;
+                height: 50%;
+                background: var(--clr);
+                transform-origin: bottom right;
+                transform: rotate(calc(45deg * var(--i)));
+                /* clip-path: polygon(0 0, 50% 0, 100% 100%, 0 50%); */
+                clip-path: polygon(0 0, 60% 0, 100% 100%, 0 60%);
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                text-transform: uppercase;
-                font-weight: 600;
-                color: #333;
-                letter-spacing: 0.1em;
-                border: rgba(0, 0, 0, 0.75);
-                cursor: pointer;
                 user-select: none;
+                cursor: pointer;
             }
 
-                /* .spin-container .spinBtn::before {
-                    content: '';
-                    position: absolute;
-                    top: -28px;
-                    width: 20px;
-                    height: 30px;
-                    background: #fff;
-                    clip-path: polygon(50% 0%, 15% 100%, 85% 100%);
-                } */
-
-            .spin-container .wheel {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: #333;
-                border-radius: 50%;
-                overflow: hidden;
-                box-shadow: 0 0 0 5px #333, 0 0 0 15px #fff, 0 0 0 18px #111;
-                transition: transform 5s ease-in-out;
-            }
-
-                .spin-container .wheel .number {
-                    position: absolute;
-                    width: 50%;
-                    height: 50%;
-                    background: var(--clr);
-                    transform-origin: bottom right;
-                    transform: rotate(calc(45deg * var(--i)));
-                    clip-path: polygon(0 0, 56% 0, 100% 100%, 0 56%);
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    user-select: none;
-                    cursor: pointer;
+                .spin-container .wheel .number span {
+                    position: relative;
+                    transform: rotate(45deg);
+                    font-size: 1.4em;
+                    font-weight: 700;
+                    color: #fff;
+                    text-shadow: 3px 5px 2px rgba(0, 0, 0, 0.15);
                 }
 
-                    .spin-container .wheel .number span {
-                        position: relative;
-                        transform: rotate(45deg);
-                        font-size: 1.4em;
-                        font-weight: 700;
-                        color: #fff;
-                        text-shadow: 3px 5px 2px rgba(0, 0, 0, 0.15);
+                    .spin-container .wheel .number span::after {
+                        content: '';
+                        position: absolute;
+                        font-size: 0.75em;
+                        font-weight: 500;
                     }
 
-                        .spin-container .wheel .number span::after {
-                            content: '';
-                            position: absolute;
-                            font-size: 0.75em;
-                            font-weight: 500;
-                        }
+
+        /****************/
+
+        .character-right-section {
+            width: 50%;
+        }
+
+        .spin-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .triangle {
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 30px solid white;
+            position: absolute;
+            top: 50%;
+            right: -290%;
+            transform: translateY(-50%);
+        }
+
+        .spin-container .spinBtn {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-color: #fff;
+            border-radius: 50%;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #333;
+            letter-spacing: 0.1em;
+            border: rgba(0, 0, 0, 0.75);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .spin-container .wheel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #333;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 0 5px #333, 0 0 0 15px #fff, 0 0 0 18px #111;
+            transition: transform 5s ease-in-out;
+        }
+
+            .spin-container .wheel .number {
+                position: absolute;
+                width: 50%;
+                height: 50%;
+                background: var(--clr);
+                transform-origin: bottom right;
+                transform: rotate(calc(45deg * var(--i)));
+                clip-path: polygon(0 0, 60% 0, 100% 100%, 0 60%); /*60%'s are statical.*/
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                user-select: none;
+                cursor: pointer;
+            }
+
+                .spin-container .wheel .number span {
+                    position: relative;
+                    transform: rotate(45deg);
+                    font-size: 1.4em;
+                    font-weight: 700;
+                    color: #fff;
+                    text-shadow: 3px 5px 2px rgba(0, 0, 0, 0.15);
+                }
+
+                    .spin-container .wheel .number span::after {
+                        content: '';
+                        position: absolute;
+                        font-size: 0.75em;
+                        font-weight: 500;
+                    }
     </style>
 
     <div class="character-right-section">
         <h3>Spinning Wheel</h3>
-        <p>Spinning wheel component will be placed here.</p>
-
         <div class="spin-container">
             <div class="spinBtn">
                 <div class="triangle"></div>
                 Spin
             </div>
-            <div class="wheel">
-                <div class="number" style="--i:1;--clr:#db7093;"><span>killer</span></div>
-                <div class="number" style="--i:2;--clr:#20b2aa;"><span>Mafia</span></div>
-                <div class="number" style="--i:3;--clr:#d63e92;"><span>Mafia</span></div>
-                <div class="number" style="--i:4;--clr:#daa520;"><span>Don</span></div>
-                <div class="number" style="--i:5;--clr:#ff340f;"><span>Doctor</span></div>
-                <div class="number" style="--i:6;--clr:#ff7f50;"><span>Detective</span></div>
-                <div class="number" style="--i:7;--clr:#3cb371;"><span>Citizen</span></div>
-                <div class="number" style="--i:8;--clr:#4169e1;"><span>kumiiii</span></div>
-            </div>
+            <div class="wheel" id="wheel"></div>
         </div>
-
-        <script>
-            let wheel = document.querySelector('.wheel');
-            let spinBtn = document.querySelector('.spinBtn');
-            let value = Math.ceil(Math.random() * 3600);
-
-            spinBtn.onclick = function () {
-                wheel.style.transform = "rotate(" + value + "deg)"
-                value += Math.ceil(Math.random() * 3600);
-            }
-        </script>
     </div>
 </section>
+
+<script>
+    const wheel = document.getElementById('wheel');
+    const spinBtn = document.querySelector('.spinBtn');
+    const form = document.querySelector('form');
+
+    function randomColor() {
+        return `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`;
+    }
+
+    function createWheel() {
+        const characterTable = document.querySelector('table tbody');
+        const characters = Array.from(characterTable.querySelectorAll('tr td'))
+            .map(td => td.textContent.trim())
+            .filter(char => char !== '');
+
+        wheel.innerHTML = '';
+        const segmentCount = characters.length;
+        const step = 360 / segmentCount;
+
+        characters.forEach((character, index) => {
+            const segment = document.createElement('div');
+            segment.classList.add('number');
+
+            // Set rotation based on segment
+            segment.style.setProperty('--i', index + 1);
+
+            // Generate random color for each segment
+            const color = randomColor();
+            segment.style.setProperty('--clr', color);
+
+            const span = document.createElement('span');
+            span.textContent = character;
+            segment.appendChild(span);
+
+            wheel.appendChild(segment);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', createWheel);
+
+    form.addEventListener('submit', function (event) {
+        setTimeout(createWheel, 100);
+    });
+
+    spinBtn.onclick = function () {
+        const characterTable = document.querySelector('table tbody');
+        const characters = Array.from(characterTable.querySelectorAll('tr td'))
+            .map(td => td.textContent.trim())
+            .filter(char => char !== '');
+
+        if (characters.length > 0) {
+            const value = Math.ceil(Math.random() * 3600);
+            wheel.style.transform = `rotate(${value}deg)`;
+        } else {
+            alert('Please add characters to the wheel first!');
+        }
+    };
+</script>
