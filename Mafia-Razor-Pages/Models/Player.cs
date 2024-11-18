@@ -16,5 +16,6 @@ namespace Mafia_Razor_Pages.Models
         // added later! Seat number on the table
         public byte SeatNumber { get; set; } = 0;
         public string? Character { get; set; } = null;
+        public bool IsFirstLose { get; set; } = false;
     }
 }

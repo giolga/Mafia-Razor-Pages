@@ -36,6 +36,7 @@ body {
     margin-bottom: 0.3em;
 }
 
+
 .character-container {
     display: flex;
     width: 100%;
@@ -59,6 +60,8 @@ body {
 
 .character-right-section {
     /* Optional: Add specific styles for the bottom section */
+    background-color: #333;
+    color: white;
 }
 
 .form-container {
