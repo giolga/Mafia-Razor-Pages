@@ -60,3 +60,44 @@ body {
 .character-right-section {
     /* Optional: Add specific styles for the bottom section */
 }
+
+.form-container {
+    max-width: 750px; /* Limit the form container width */
+    margin: 0 auto; /* Center it horizontally */
+    padding: 20px; /* Add some padding */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visuals */
+}
+
+
+@media screen and (max-width: 750px) {
+    .form-container {
+        width: 100%; /* Make it full-width */
+        margin: 0 auto; /* Add some side margin */
+    }
+    
+        .form-container input[type="text"] {
+            width: 100%; /* Input takes full width */
+        }
+
+    .btn {
+        width: 100%; /* Button takes full width */
+    }
+
+    .character-container {
+        display: flex;
+        width: 100%;
+        flex-direction: column; /* Stack sections vertically */
+        height: 80vh; /* Full height of the viewport */
+    }
+
+}
+
+/*@media screen and (max-width: 325px) {
+    .form-container {
+        min-width: 70%;*/ /* Make it full-width */
+        /*margin: 0 10px;*/ /* Add some side margin */
+    /*}
+}*/
