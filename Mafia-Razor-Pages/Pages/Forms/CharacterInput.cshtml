@@ -1,6 +1,7 @@
-﻿@page
+﻿@* @page
 @model Mafia_Razor_Pages.Pages.Forms.CharacterInputModel
 @{
+
 }
 
 <section>
@@ -38,4 +39,56 @@
             }
         </tbody>
     </table>
+</section>
+ *@
+
+ @page
+@model Mafia_Razor_Pages.Pages.Forms.CharacterInputModel
+@{
+}
+
+<section class="character-container">
+    <!-- Top section: Character registration and table -->
+    <div class="character-left-section">
+        <form method="post" class="mx-auto mt-5 mb-5 px-5 pt-5 pb-5 rounded-5 alert-light">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="register-character">
+                <span asp-validation-for="Character" class="text-danger"></span>
+                <input type="text" class="mt-1" asp-for="Character" placeholder="Character" />
+                <br />
+                <label>Remaining Slots: <span>@Model.RemainingSlots</span></label>
+            </div>
+
+            <div class="d-flex justify-content-left">
+                <button class="btn btn-primary mt-1" type="submit">Register Character</button>
+            </div>
+        </form>
+
+        <section>
+            <h3>Characters</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Character</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var character in Model.Characters)
+                    {
+                        <tr>
+                            <td>@character</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <!-- Bottom section: Spinning wheel -->
+    <div class="character-right-section">
+        <h3>Spinning Wheel</h3>
+        <p>Spinning wheel component will be placed here.</p>
+        <!-- Add spinning wheel content here later -->
+    </div>
 </section>

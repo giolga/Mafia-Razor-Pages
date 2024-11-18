@@ -35,3 +35,28 @@ body {
     font-size: 0.9em;
     margin-bottom: 0.3em;
 }
+
+.character-container {
+    display: flex;
+    width: 100%;
+    flex-direction: row; /* Stack sections vertically */
+    height: 80vh; /* Full height of the viewport */
+}
+
+.character-left-section,
+.character-right-section {
+    flex: 1; /* Each section takes up equal vertical space */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    overflow-y: auto; /* Add scroll if content overflows */
+}
+
+.character-left-section {
+    /* Optional: Add specific styles for the top section */
+}
+
+.character-right-section {
+    /* Optional: Add specific styles for the bottom section */
+}
