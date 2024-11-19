@@ -12,7 +12,7 @@
 
                 <div class="register-character">
                     <span asp-validation-for="Character" class="text-danger"></span>
-                    <input type="text" class="mt-1 animal-input" asp-for="Character" placeholder="Character" />
+                    <input type="text" class="mt-1 character-input" asp-for="Character" placeholder="Character" />
                     <br />
                     <label>Remaining Slots: <span>@Model.RemainingSlots</span></label>
                 </div>
@@ -98,17 +98,12 @@
         </div>
 
         <div class="wheel">
-            <canvas class="" id="canvas" width="500" height="500"></canvas>
+            <canvas class="" id="canvas" width="300" height="300"></canvas>
             <div class="center-circle" onclick="spin()">
                 <div class="triangle"></div>
             </div>
 
         </div>
-
-        @* <div class="inputArea">
-        <input type="text" class="animal-input" placeholder="Animal">
-        <button type="submit" onclick="createWheel()">Add</button>
-        </div> *@
     </div>
 
 
@@ -261,10 +256,10 @@
 
         // Create/update wheel
         function createWheel() {
-            const inputValue = document.getElementsByClassName('animal-input')[0].value;
+            const inputValue = document.getElementsByClassName('character-input')[0].value;
             if (inputValue.trim()) {
                 items.push(inputValue.trim());
-                document.getElementsByClassName('animal-input')[0].value = '';
+                document.getElementsByClassName('character-input')[0].value = '';
             }
 
             step = 360 / items.length;
