@@ -17,6 +17,15 @@ namespace Mafia_Razor_Pages.Pages.Forms
         public string Character { get; set; }
 
         public byte RemainingSlots { get; private set; }
+        public List<string> CharacterImages = new List<string>
+        {
+            "citizen",
+            "doctor",
+            "detective",
+            "don",
+            "mafia",
+            "killer"
+        };
 
         public CharacterInputModel(CharacterService characterService, AppDbContext context)
         {

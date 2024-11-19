@@ -97,3 +97,16 @@ body {
     }
 
 }
+
+
+.character-img :hover {
+    transform: scale(1.05);
+}
+
+.img-fixed {
+    width: 150px; /* Set the desired width */
+    height: 150px; /* Set the desired height */
+    object-fit: cover; /* Ensures images fit within dimensions by cropping */
+    display: block; /* Fixes alignment issues with inline elements */
+    margin: auto; /* Centers the image within its parent */
+}
