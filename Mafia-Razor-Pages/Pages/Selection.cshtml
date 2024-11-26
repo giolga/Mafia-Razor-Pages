@@ -1,4 +1,4 @@
-﻿@page
+﻿@page 
 @model Mafia_Razor_Pages.Pages.SelectionModel
 @{
 }
@@ -12,6 +12,17 @@
 
     <div class="character-right-section">
         <h1>Nao CHAMA!</h1>
+
+        @if(Model.MyCharacters != null)
+        {
+            <ul>
+                @foreach (var character in Model.MyCharacters)
+                {
+                    <li>@character</li>
+                }
+            </ul>
+        }
     </div>
 
 </div>
+

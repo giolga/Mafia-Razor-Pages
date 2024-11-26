@@ -2,6 +2,7 @@ using Mafia_Razor_Pages.Data;
 using Mafia_Razor_Pages.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Newtonsoft.Json;
 
 namespace Mafia_Razor_Pages.Pages.Forms
 {
@@ -42,6 +43,23 @@ namespace Mafia_Razor_Pages.Pages.Forms
         {
             UpdateRemainingSlots();
 
+            if(RemainingSlots == 0)
+            {
+                // TempData["MyCharacters"] = _characterService.Characters.ToList();
+                //return RedirectToPage("../Selection");
+
+                var charactersJson = JsonConvert.SerializeObject(_characterService.Characters.ToList());
+
+                // Store the list in session
+                HttpContext.Session.SetString("MyCharacters", charactersJson);
+
+                // Debugging: Log the stored value to ensure it's correct
+                Console.WriteLine("Characters stored in session: " + charactersJson);
+
+                // Redirect to the Selection page
+                return RedirectToPage("../Selection");
+            }
+
             // Validation: Check if character is empty
             if (string.IsNullOrWhiteSpace(Character))
             {
@@ -50,11 +68,11 @@ namespace Mafia_Razor_Pages.Pages.Forms
             }
 
             // Validation: Check if slots are full
-            if (RemainingSlots <= 0)
-            {
-                ModelState.AddModelError(nameof(Character), "No slots remaining to add a new character.");
-                return Page();
-            }
+            //if (RemainingSlots < 0) // here was <=
+            //{
+            //    ModelState.AddModelError(nameof(Character), "No slots remaining to add a new character.");
+            //    return Page();
+            //}
 
             // Add the character if validations pass
             _characterService.Characters.Add(Character);

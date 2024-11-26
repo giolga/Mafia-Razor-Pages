@@ -14,6 +14,15 @@ builder.Services.AddDbContext<AppDbContext>(
     );
 builder.Services.AddSingleton<CharacterService>();
 
+// Add session support... this and line 41 for CharacterInput -> Selection page 
+builder.Services.AddDistributedMemoryCache(); // Required for session
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Set session timeout
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -28,6 +37,9 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+// Enable session middleware
+app.UseSession(); // Add this line to enable session support
 
 app.UseAuthorization();
 
