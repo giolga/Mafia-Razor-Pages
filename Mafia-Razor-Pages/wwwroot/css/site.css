@@ -51,13 +51,23 @@ body {
     border-radius: 5px;
     padding: 20px;
     background-color: #f9f9f9;
-    overflow-y: auto; /* Add scroll if content overflows */
+    /*overflow-y: auto;*/ /* Add scroll if content overflows */
 }
 
 .character-left-section {
     /* Optional: Add specific styles for the top section */
     background: #838383;
+   /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 15px;*/
 }
+
+/*.player-table {
+    width: 100%;*/ /* Full width of parent */
+    /*max-width: 500px;*/ /* Maximum width */
+    /*margin: 0 auto;*/ /* Center the table */
+/*}*/
 
 .character-right-section {
     /* Optional: Add specific styles for the bottom section */
@@ -84,7 +94,6 @@ body {
     border-radius: 10px;
 }
 
-
 @media screen and (max-width: 750px) {
     .form-container {
         width: 100%; /* Make it full-width */
@@ -106,6 +115,16 @@ body {
         height: 80vh; /* Full height of the viewport */
     }
 
+    .selection-container {
+        display: flex;
+        width: 100%;
+        flex-direction: column; /* Stack sections vertically */
+        height: 80vh;
+    }
+
+    .player-table {
+        width: 90%;  /*Wider on smaller screens */
+    }
 }
 
 
