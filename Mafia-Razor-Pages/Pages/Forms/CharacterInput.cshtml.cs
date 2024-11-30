@@ -67,17 +67,11 @@ namespace Mafia_Razor_Pages.Pages.Forms
                 return Page();
             }
 
-            // Validation: Check if slots are full
-            //if (RemainingSlots < 0) // here was <=
-            //{
-            //    ModelState.AddModelError(nameof(Character), "No slots remaining to add a new character.");
-            //    return Page();
-            //}
-
             // Add the character if validations pass
             _characterService.Characters.Add(Character);
 
             // Redirect to refresh the page and update UI
+            Console.WriteLine(RemainingSlots == 0);
             return RedirectToPage();
         }
 
@@ -85,6 +79,7 @@ namespace Mafia_Razor_Pages.Pages.Forms
         {
             var totalPlayers = (byte)_context.Players.Count();
             RemainingSlots = (byte)(totalPlayers - _characterService.Characters.Count);
+            Console.WriteLine($"Updated {RemainingSlots}");
         }
     }
 }

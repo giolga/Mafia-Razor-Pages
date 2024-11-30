@@ -93,7 +93,6 @@
 
     <div class="character-right-section">
         <h1>Nao CHAMA!</h1>
-
         @if (Model.MyCharacters != null)
         {
             <ul>
@@ -103,9 +102,13 @@
                 }
             </ul>
         }
-
-        <button class="btn btn-primary" type="submit">Orginize Characters</button>
-        <button class="btn btn-primary" type="submit">Orginize Seats</button>
+        <form method="post">
+            <button asp-page-handler="OrganizeCharacters" class="btn btn-primary" type="submit">Organize Characters</button> @*OrganizeCharacters -> OnPostOrganizeCharacters*@
+        </form>
+        </br>
+        <form method="post">
+            <button asp-page-handler="OrganizeSeats" class="btn btn-primary" type="submit">Organize Seats</button>
+        </form>
     </div>
-</div>
 
+</div>
