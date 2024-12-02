@@ -3,92 +3,53 @@
 @{
 }
 
-<style>
-    .player-table-wrapper {
-        width: 100%;
-        overflow-x: hidden; /* Allow horizontal scrolling if needed */
-    }
-
-    .player-table {
-        width: 100%;
-        min-width: 600px;
-        border-collapse: separate;
-        border-spacing: 0;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        border-radius: 8px;
-        overflow: hidden;
-    }
-
-        .player-table thead {
-            background-color: #f8f9fa;
-        }
-
-        .player-table th {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 2px solid #dee2e6;
-            color: #495057;
-            text-transform: uppercase;
-            font-size: 0.9em;
-            font-weight: 600;
-        }
-
-        .player-table td {
-            padding: 12px 15px;
-            border-bottom: 1px solid #e9ecef;
-        }
-
-        .player-table tbody tr:hover {
-            background-color: #f1f3f5;
-            transition: background-color 0.3s ease;
-        }
-
-        .player-table tbody tr:last-child td {
-            border-bottom: none;
-        }
-</style>
-
-
 <div class="selection-container">
     <div class="character-left-section">
-        <h1>CHAMA!</h1>
-        <h3>@Model._context.Players.Count()</h3>
-        @{
-            var players = Model._context.Players.ToList();
-            <div class="player-table-wrapper">
-                <table class="player-table">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Name</th>
-                            <th>Surname</th>
-                            <th>Age</th>
-                            <th>Phone Number</th>
-                            <th>Email</th>
-                            <th>Seat Number</th>
-                            <th>Character</th>
-                            <th>First Lose</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var player in players)
-                        {
+        <main class="table">
+            <section class="table_header">
+                <h1>Player's Orders</h1>
+            </section>
+            <section class="table_body">
+                @if (Model._context.Players.Any())
+                {
+                    <table>
+                        <thead>
                             <tr>
-                                <td>@player.Id</td>
-                                <td>@player.Name</td>
-                                <td>@player.Surname</td>
-                                <td>@player.Age</td>
-                                <td>@player.PhoneNumber</td>
-                                <td>@player.Gmail</td>
-                                <td>@player.SeatNumber</td>
-                                <td>@player.Character</td>
-                                <td>@(player.IsFirstLose ? "Yes" : "No")</td>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Surname</th>
+                                <th>Age</th>
+                                <th>Phone Number</th>
+                                <th>Email</th>
+                                <th>Seat Number</th>
+                                <th>Character</th>
+                                <th>First Lose</th>
                             </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-        }
+                        </thead>
+                        <tbody>
+                            @foreach (var player in Model._context.Players.ToList())
+                            {
+                                <tr>
+                                    <td>@player.Id</td>
+                                    <td>@player.Name</td>
+                                    <td>@player.Surname</td>
+                                    <td>@player.Age</td>
+                                    <td>@player.PhoneNumber</td>
+                                    <td>@player.Gmail</td>
+                                    <td>@player.SeatNumber</td>
+                                    <td>@player.Character</td>
+                                    <td>@(player.IsFirstLose ? "Yes" : "No")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <p class="text-center text-muted">No players found.</p>
+                }
+            </section>
+        </main>
     </div>
 
     <div class="character-right-section">
