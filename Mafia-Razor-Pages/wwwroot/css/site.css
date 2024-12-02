@@ -57,17 +57,11 @@ body {
 .character-left-section {
     /* Optional: Add specific styles for the top section */
     background: #838383;
-   /* display: flex;
+    /* display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0 15px;*/
 }
-
-/*.player-table {
-    width: 100%;*/ /* Full width of parent */
-    /*max-width: 500px;*/ /* Maximum width */
-    /*margin: 0 auto;*/ /* Center the table */
-/*}*/
 
 .character-right-section {
     /* Optional: Add specific styles for the bottom section */
@@ -99,7 +93,7 @@ body {
         width: 100%; /* Make it full-width */
         margin: 0 auto; /* Add some side margin */
     }
-    
+
         .form-container input[type="text"] {
             width: 100%; /* Input takes full width */
         }
@@ -123,7 +117,7 @@ body {
     }
 
     .player-table {
-        width: 90%;  /*Wider on smaller screens */
+        width: 90%; /*Wider on smaller screens */
     }
 }
 
@@ -133,9 +127,132 @@ body {
 }
 
 .img-fixed {
-    width: 150px; /* Set the desired width */
-    height: 150px; /* Set the desired height */
-    object-fit: cover; /* Ensures images fit within dimensions by cropping */
-    display: block; /* Fixes alignment issues with inline elements */
-    margin: auto; /* Centers the image within its parent */
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    margin: auto;
+}
+
+/*Selection table responsivnes*/
+
+.table_body::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.table_body::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+
+.table_body:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.table_header {
+    width: 100%;
+    height: 10%;
+    background-color: #fff4;
+    padding: .8rem 1rem;
+}
+
+    .table_header h1 {
+        margin: 0;
+        font-size: 1.25rem;
+        color: #333;
+    }
+
+.table_body {
+    width: 95%;
+    max-height: calc(89% - 1.6rem);
+    background-color: #fffb;
+    margin: .8rem auto;
+    border-radius: .6rem;
+    overflow: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+    .table main.table {
+        width: 82vw;
+        height: 90vh;
+        background-color: #fff5;
+        backdrop-filter: blur(7px);
+        box-shadow: 0 .4rem .8rem #0005;
+        border-radius: .8rem;
+        overflow: hidden;
+    }
+
+    .table thead {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+        .table thead th {
+            /*background-color: #f1f3f5;
+        color: #495057;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 0.75rem;
+        border-bottom: 2px solid #dee2e6;*/
+
+            position: sticky;
+            top: 0;
+            /* left: 0; */
+            background-color: #d5d1defe;
+        }
+
+    .table table, th, td {
+        border-collapse: collapse;
+        padding: 1rem;
+        text-align: left;
+    }
+
+    .table tbody tr {
+        transition: background-color 0.2s ease;
+    }
+
+tbody tr:nth-child(even) {
+    background-color: #0000000b;
+}
+
+tbody tr:hover {
+    background-color: #fff6;
+}
+
+.table tbody td {
+    padding: 0.75rem;
+    vertical-align: middle;
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    /*.table {
+        font-size: 0.9rem;
+    }
+
+    .table_body {
+        overflow-x: auto;
+    }*/
+
+    .table td:not(:first-of-type) {
+        min-width: 12.1rem;
+    }
 }
