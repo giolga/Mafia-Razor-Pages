@@ -55,12 +55,7 @@ body {
 }
 
 .character-left-section {
-    /* Optional: Add specific styles for the top section */
     background: #838383;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 15px;*/
 }
 
 .character-right-section {
@@ -86,6 +81,15 @@ body {
     height: 80vh;
     background: #CAC1C1;
     border-radius: 10px;
+}
+
+@media screen and (max-width: 1199px) {
+    .selection-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 80vh;
+    }
 }
 
 @media screen and (max-width: 750px) {
@@ -115,14 +119,10 @@ body {
         flex-direction: column; /* Stack sections vertically */
         height: 80vh;
     }
-
-    .player-table {
-        width: 90%; /*Wider on smaller screens */
-    }
 }
 
 
-.character-img :hover {
+.character-img:hover {
     transform: scale(1.05);
 }
 
@@ -151,7 +151,7 @@ body {
     visibility: visible;
 }
 
-.table {
+.selection-table {
     width: 100%;
     max-width: 100%;
     margin-bottom: 1rem;
@@ -182,13 +182,13 @@ body {
     overflow: auto;
 }
 
-.table {
+.selection-table {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
 }
 
-    .table main.table {
+    .selection-table main.table {
         width: 82vw;
         height: 90vh;
         background-color: #fff5;
@@ -198,13 +198,13 @@ body {
         overflow: hidden;
     }
 
-    .table thead {
+    .selection-table thead {
         position: sticky;
         top: 0;
         z-index: 10;
     }
 
-        .table thead th {
+        .selection-table thead th {
             /*background-color: #f1f3f5;
         color: #495057;
         font-weight: 600;
@@ -218,25 +218,25 @@ body {
             background-color: #d5d1defe;
         }
 
-    .table table, th, td {
+    .selection-table table, th, td {
         border-collapse: collapse;
         padding: 1rem;
         text-align: left;
     }
 
-    .table tbody tr {
+    .selection-table tbody tr {
         transition: background-color 0.2s ease;
     }
 
-tbody tr:nth-child(even) {
+.selection-table tbody tr:nth-child(even) {
     background-color: #0000000b;
 }
 
-tbody tr:hover {
+.selection-table tbody tr:hover {
     background-color: #fff6;
 }
 
-.table tbody td {
+.selection-table tbody td {
     padding: 0.75rem;
     vertical-align: middle;
     border-bottom: 1px solid #dee2e6;
