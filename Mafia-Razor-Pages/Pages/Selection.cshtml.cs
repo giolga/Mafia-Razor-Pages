@@ -85,5 +85,10 @@ namespace Mafia_Razor_Pages.Pages
 
             return RedirectToPage();
         }
+
+        public IActionResult OnPostStartGame()
+        {
+            return RedirectToPage("/Game");
+        }
     }
 }

@@ -16,17 +16,33 @@ body {
     /*color: white;*/
 }
 
+.main-container {
+    display:flex;
+    flex-direction: column;
+}
+
+.main-container-links {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.mainText {
+    margin: 0 auto;
+    text-align: center;
+}
+
 .main-image {
     height: 60vh;
     border-radius: 20px;
     filter: drop-shadow(0px, 0px, 10px, rgba(0, 0, 0, 0.3));
-    margin: 40px;
     transition: filter 0.5s ease;
 }
 
-    .main-image:hover {
-        filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.3)) brightness(0.5); /* Darkens the image */
-    }
+
+.main-image:hover {
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.3)) brightness(0.5); /* Darkens the image */
+}
 
 .text-danger {
     font-size: 0.9em;
@@ -128,6 +144,7 @@ body {
         flex-direction: column; /* Stack sections vertically */
         height: 80vh;
     }
+
 }
 
 

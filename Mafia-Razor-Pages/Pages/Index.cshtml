@@ -4,14 +4,27 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
+@* <div class="text-center">
     <div class="mainText">
         <h1 class="display-4 text-capitalize text-black">Welcome to mafia</h1>
         <h2 class="mainSubTitle">Razor Mafia, Developed by the One And Only, El Kumi ladies and gents!</h2>
     </div>
-    
+
     <img class="main-image" src="~/images/mafia4.jpg" />
-    <br />
+    </br>
     <a class="btn btn-primary mt-1" asp-area="" asp-page="Forms/RegisterUser">Register User</a>
     <a class="btn btn-primary mt-1" asp-area="" asp-page="Forms/CharacterInput">Define Characters</a>
+</div> *@
+
+<div class="main-container">
+    <div class="mainText">
+        <h1 class="display-4 text-capitalize text-black">Welcome to mafia</h1>
+        <h2 class="mainSubTitle">Razor Mafia, Developed by the One And Only, El Kumi ladies and gents!</h2>
+    </div>
+    <img class="main-image" src="~/images/mafia4.jpg" />
+    </br>
+    <div class="main-container-links">
+        <a class="btn btn-primary mt-1" asp-area="" asp-page="Forms/RegisterUser">Register User</a>
+        <a class="btn btn-primary mt-1" asp-area="" asp-page="Forms/CharacterInput">Define Characters</a>
+    </div>
 </div>
