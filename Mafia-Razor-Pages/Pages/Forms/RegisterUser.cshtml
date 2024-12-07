@@ -32,7 +32,7 @@
                 <div class="input-box">
                     <span class="details">Phone Number</span>
                     <span asp-validation-for="player.PhoneNumber" class="text-danger"></span>
-                    <input type="tel"asp-for="player.PhoneNumber" placeholder="Phone Number" required />
+                    <input type="tel" asp-for="player.PhoneNumber" placeholder="Phone Number" required />
                 </div>
 
                 <div class="input-box">
@@ -49,13 +49,15 @@
 
                 <span class="gender-title">Gender</span>
 
+
                 <div class="category">
                     <label for="dot-1">
+                        <input type="radio" id="dot-1"/>
                         <span class="dot one"></span>
                         <span class="gender">Male</span>
                     </label>
-
                     <label for="dot-2">
+                        <input type="radio" id="dot-2" />
                         <span class="dot two"></span>
                         <span class="gender">Female</span>
                     </label>
@@ -73,28 +75,3 @@
         }
     </div>
 </div>
-
-@* <h1>User Registration Form!</h1>
-<div class="text-center container">
-    <h2>Player Registration</h2>
-
-    <form method="post" class="mx-auto mt-5 mb-5 px-5 pt-5 pb-5 rounded-5 alert-light col-4 register-form">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-        <div class="register-user">
-            ...
-        </div>
-
-        <div class="d-flex justify-content-center">
-            <button class="btn btn-primary mt-1" type="submit">Register User</button>
-        </div>
-    </form>
-
-    @section Scripts {
-        @{
-            await Html.RenderPartialAsync("_ValidationScriptsPartial");
-        }
-    }
-
-
-</div> *@

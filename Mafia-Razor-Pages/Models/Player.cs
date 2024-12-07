@@ -6,14 +6,16 @@ namespace Mafia_Razor_Pages.Models
     {
         [Key]
         public int Id { get; set; }
+
         [Required(ErrorMessage = "Name is required!")]
         public string Name { get; set; }
+
         [Required(ErrorMessage = "Surname is required!")]
         public string Surname { get; set; }
+
         public byte? Age { get; set; }
         public string? PhoneNumber { get; set; }
         public string? Gmail { get; set; }
-        // added later! Seat number on the table
         public byte SeatNumber { get; set; } = 0;
         public string? Character { get; set; } = null;
         public bool IsFirstLose { get; set; } = false;
