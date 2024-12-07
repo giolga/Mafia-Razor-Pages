@@ -3,7 +3,78 @@
 @{
 }
 
-<h1>User Registration Form!</h1>
+@* <link rel="stylesheet" href="~/css/RegistrationStyleSheet.css" asp-append-version="true" /> *@
+
+<div class="register-container">
+    <div class="title">Registration</div>
+    <div class="register-content">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">First Name</span>
+                    <span asp-validation-for="player.Name" class="text-danger"></span>
+                    <input type="text" asp-for="player.Name" placeholder="Enter your name" required />
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Second Name</span>
+                    <span asp-validation-for="player.Surname" class="text-danger"></span>
+                    <input type="text" asp-for="player.Surname" placeholder="Enter your surname" required />
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Age</span>
+                    <span asp-validation-for="player.Age" class="text-danger"></span>
+                    <input type="number" asp-for="player.Age" placeholder="Age" required />
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Phone Number</span>
+                    <span asp-validation-for="player.PhoneNumber" class="text-danger"></span>
+                    <input type="tel"asp-for="player.PhoneNumber" placeholder="Phone Number" required />
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Gmail</span>
+                    <span asp-validation-for="player.Gmail" class="text-danger"></span>
+                    <input type="email" asp-for="player.Gmail" placeholder="Gmail" required />
+                </div>
+
+            </div>
+            <div class="gender-details">
+
+                <input type="radio" name="gender" id="dot-1">
+                <input type="radio" name="gender" id="dot-2">
+
+                <span class="gender-title">Gender</span>
+
+                <div class="category">
+                    <label for="dot-1">
+                        <span class="dot one"></span>
+                        <span class="gender">Male</span>
+                    </label>
+
+                    <label for="dot-2">
+                        <span class="dot two"></span>
+                        <span class="gender">Female</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="button">
+                <button class="btn btn-primary mt-1" type="submit">Register User</button>
+            </div>
+        </form>
+        @section Scripts {
+            @{
+                await Html.RenderPartialAsync("_ValidationScriptsPartial");
+            }
+        }
+    </div>
+</div>
+
+@* <h1>User Registration Form!</h1>
 <div class="text-center container">
     <h2>Player Registration</h2>
 
@@ -11,26 +82,7 @@
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
         <div class="register-user">
-            <span asp-validation-for="player.Name" class="text-danger"></span>
-            <br/>
-            <input type="text" class="mt-1" asp-for="player.Name" placeholder="Name" />
-            <br />
-
-            <span asp-validation-for="player.Surname" class="text-danger"></span>
-            <input type="text" class="mt-1" asp-for="player.Surname" placeholder="Surname" />
-            <br />
-
-            <span asp-validation-for="player.Age" class="text-danger"></span>
-            <input type="number" class="mt-1" asp-for="player.Age" placeholder="Age" />
-            <br />
-
-            <span asp-validation-for="player.PhoneNumber" class="text-danger"></span>
-            <input type="tel" class="mt-1" asp-for="player.PhoneNumber" placeholder="Phone Number" />
-            <br />
-
-            <span asp-validation-for="player.Gmail" class="text-danger"></span>
-            <input type="email" class="mt-1" asp-for="player.Gmail" placeholder="Gmail" />
-            <br />
+            ...
         </div>
 
         <div class="d-flex justify-content-center">
@@ -45,4 +97,4 @@
     }
 
 
-</div>
+</div> *@
