@@ -19,5 +19,6 @@ namespace Mafia_Razor_Pages.Models
         public byte SeatNumber { get; set; } = 0;
         public string? Character { get; set; } = null;
         public bool IsFirstLose { get; set; } = false;
+        public int NumberOfFouls { get; set; } = 0;
     }
 }

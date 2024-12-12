@@ -6,15 +6,74 @@
 
 <div class="game-container">
     <div class="foul-container">
-        <h1>CHAMA</h1>
+        <h1>Fouls</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Seat Number</th>
+                    <th>Foul</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var player in Model._context.Players)
+                {
+                    <tr>
+                        <td>@player.Id</td>
+                        <td>@player.SeatNumber</td>
+                        <td>@player.NumberOfFouls</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 
     <div class="record-container">
-        <h1>CHAMA SEMPRE!</h1>
+        <div class="post-container">
+            <form method="post">
+                <input type="radio" id="mafia" name="character" value="Mafia">
+                <label for="mafia">Mafia</label><br>
+                <input type="radio" id="don" name="character" value="Don">
+                <label for="don">Don</label><br>
+                <input type="radio" id="serial" name="character" value="Serial Killer">
+                <label for="serial">Serial Killer</label><br>
+                <input type="radio" id="detective" name="character" value="Detective">
+                <label for="detective">Detective</label>
+            </form>
+        </div>
+
+        <div id="posts-list">
+
+        </div>
     </div>
 
     <div class="player-container">
-        <h1>CHAMA</h1>
+        <h1>Players</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Character</th>
+                    <th>Seat Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var player in Model._context.Players)
+                {
+                    <tr>
+                        <td>@player.Id</td>
+                        <td>@player.Name</td>
+                        <td>@player.Surname</td>
+                        <td>@player.Character</td>
+                        <td>@player.SeatNumber</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 
 </div>

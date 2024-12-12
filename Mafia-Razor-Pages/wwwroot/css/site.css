@@ -5,7 +5,7 @@ body {
 
 /*index page*/
 .main-container {
-    display:flex;
+    display: flex;
     flex-direction: column;
 }
 
@@ -33,9 +33,9 @@ body {
     transition: filter 0.5s ease;
 }
 
-.main-image:hover {
-    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.3)) brightness(0.5); /* Darkens the image */
-}
+    .main-image:hover {
+        filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.3)) brightness(0.5); /* Darkens the image */
+    }
 
 .text-danger {
     font-size: 0.9em;
@@ -112,9 +112,10 @@ body {
     .main-container-links {
         width: 10vh;
     }
-    .main-container-links a {
-        font-size: 18px;
-    }
+
+        .main-container-links a {
+            font-size: 18px;
+        }
 
     .main-image {
         width: 100%;
@@ -148,7 +149,6 @@ body {
         flex-direction: column; /* Stack sections vertically */
         height: 80vh;
     }
-
 }
 
 
@@ -258,19 +258,19 @@ body {
         transition: background-color 0.2s ease;
     }
 
-.selection-table tbody tr:nth-child(even) {
-    background-color: #0000000b;
-}
+        .selection-table tbody tr:nth-child(even) {
+            background-color: #0000000b;
+        }
 
-.selection-table tbody tr:hover {
-    background-color: #fff6;
-}
+        .selection-table tbody tr:hover {
+            background-color: #fff6;
+        }
 
-.selection-table tbody td {
-    padding: 0.75rem;
-    vertical-align: middle;
-    border-bottom: 1px solid #dee2e6;
-}
+    .selection-table tbody td {
+        padding: 0.75rem;
+        vertical-align: middle;
+        border-bottom: 1px solid #dee2e6;
+    }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -440,6 +440,7 @@ form .button {
     height: 80vh;
     color: white;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: start;
 }
@@ -447,13 +448,17 @@ form .button {
 .foul-container {
     width: 40%;
     height: 100%;
-    background-color: antiquewhite;
+    background-color: darkseagreen;
 }
 
 .record-container {
     width: 100%;
     height: 100%;
     background-color: cornflowerblue;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 20px;
 }
 
 .player-container {
@@ -461,3 +466,20 @@ form .button {
     height: 100%;
     background-color: burlywood;
 }
+
+.post-container {
+    flex: 1;
+}
+
+    .post-container form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .post-container input[type="radio"] {
+        width: 20px; /* Explicit size */
+        height: 20px;
+        margin-right: 10px; /* Space between button and label */
+        border: 2px solid black; /* Visible border */
+    }
