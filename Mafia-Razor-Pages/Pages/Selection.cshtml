@@ -15,7 +15,7 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                @* <th>ID</th> *@
                                 <th>Name</th>
                                 <th>Surname</th>
                                 <th>Age</th>
@@ -30,7 +30,7 @@
                             @foreach (var player in Model._context.Players.ToList())
                             {
                                 <tr>
-                                    <td>@player.Id</td>
+                                    @* <td>@player.Id</td> *@
                                     <td>@player.Name</td>
                                     <td>@player.Surname</td>
                                     <td>@player.Age</td>
