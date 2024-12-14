@@ -32,14 +32,22 @@
     <div class="record-container">
         <div class="post-container">
             <form method="post">
-                <input type="radio" id="mafia" name="character" value="Mafia">
-                <label for="mafia">Mafia</label><br>
-                <input type="radio" id="don" name="character" value="Don">
-                <label for="don">Don</label><br>
-                <input type="radio" id="serial" name="character" value="Serial Killer">
-                <label for="serial">Serial Killer</label><br>
-                <input type="radio" id="detective" name="character" value="Detective">
-                <label for="detective">Detective</label>
+                <div class="form-check">
+                    <input type="radio" name="character" id="mafia" value="Mafia" style="display: inline-block; width: 20px; height: 20px;">
+                    <label class="form-check-label" for="mafia">Mafia</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="character" id="don" value="Don" style="display: inline-block; width: 20px; height: 20px;">
+                    <label class="form-check-label" for="don">Don</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="character" id="serial" value="Serial Killer" style="display: inline-block; width: 20px; height: 20px;">
+                    <label class="form-check-label" for="serial">Serial Killer</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="character" id="detective" value="Detective" style="display: inline-block; width: 20px; height: 20px;">
+                    <label class="form-check-label" for="detective">Detective</label>
+                </div>
             </form>
         </div>
 
@@ -77,3 +85,4 @@
     </div>
 
 </div>
+

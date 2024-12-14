@@ -467,19 +467,24 @@ form .button {
     background-color: burlywood;
 }
 
-.post-container {
+.record-container .post-container {
     flex: 1;
 }
 
-    .post-container form {
+    .record-container .post-container form {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        padding: 20px; /* Added padding to all sides */
+        gap: 10px; /* Adds space between radio buttons */
     }
 
-    .post-container input[type="radio"] {
-        width: 20px; /* Explicit size */
+    .record-container .post-container input[type="radio"] {
+        width: 20px;
         height: 20px;
-        margin-right: 10px; /* Space between button and label */
-        border: 2px solid black; /* Visible border */
+        margin-right: 10px;
+        accent-color: white; /* This helps make the radio buttons more visible */
+        background-color: white; /* Ensure a white background */
+        border: 2px solid white; /* Visible white border */
+        outline: 2px solid black; /* Optional: adds a black outline */
     }
+
