@@ -456,7 +456,8 @@ form .button {
     height: 100%;
     background-color: cornflowerblue;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    /*justify-content: space-between;*/
     padding: 10px;
     gap: 20px;
 }
@@ -468,10 +469,16 @@ form .button {
 }
 
 .record-container .post-container {
-    flex: 1;
+    /*flex: 1;*/
 }
 
 .target-btn, .target {
     margin-left: 20px;
     margin-top: 10px;
+}
+
+.actions-list-container {
+    background-color: cadetblue;
+    max-height: 300px; /* Adjust the height as needed */
+    overflow-y: auto;
 }

@@ -63,33 +63,36 @@
         </div>
 
         <div id="posts-list">
-            @if (Model.GameActions != null && Model.GameActions.Any())
-            {
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Character</th>
-                            <th>Target</th>
-                            <th>Time</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var action in Model.GameActions.OrderByDescending(a => a.TimeStamp))
-                        {
+            <div class="actions-list-container">
+                @if (Model.GameActions != null && Model.GameActions.Any())
+                {
+                    <table>
+                        <thead>
                             <tr>
-                                <td>@action.Character</td>
-                                <td>@action.TargetSeatNumber</td>
-                                <td>@action.TimeStamp.ToString("HH:mm:ss")</td>
+                                <th>Character</th>
+                                <th>Target</th>
+                                <th>Time</th>
                             </tr>
-                        }
-                    </tbody>
-                </table>
-            }
-            else
-            {
-                <p>No actions recorded yet.</p>
-            }
+                        </thead>
+                        <tbody>
+                            @foreach (var action in Model.GameActions.OrderByDescending(a => a.TimeStamp))
+                            {
+                                <tr>
+                                    <td>@action.Character</td>
+                                    <td>@action.TargetSeatNumber</td>
+                                    <td>@action.TimeStamp.ToString("HH:mm:ss")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <p>No actions recorded yet.</p>
+                }
+            </div>
         </div>
+    </div>
 
     <div class="player-container">
         <h1>Players</h1>

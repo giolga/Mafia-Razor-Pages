@@ -14,8 +14,10 @@ namespace Mafia_Razor_Pages.Pages
         public string SelectedCharacter { get; set; }
         [BindProperty]
         public int Target { get; set; }
-
         public List<GameAction> GameActions { get; set; }
+        public int SerialKillLeft = 2;
+
+
 
         public GameModel(AppDbContext context, ILogger<GameModel> logger)
         {
@@ -38,12 +40,14 @@ namespace Mafia_Razor_Pages.Pages
                 return Page();
             }
 
-           
-            if(Target <= 0 || Target == null)
+
+            if (Target <= 0)
             {
                 ModelState.AddModelError(string.Empty, "Please select a valid character!");
                 return Page();
             }
+
+
 
             var newAction = new GameAction
             {
