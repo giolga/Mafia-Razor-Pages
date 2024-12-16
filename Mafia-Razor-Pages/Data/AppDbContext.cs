@@ -8,5 +8,6 @@ namespace Mafia_Razor_Pages.Data
         public AppDbContext(DbContextOptions options) : base(options) { }
 
         public DbSet<Player> Players { get; set; }
+        public DbSet<GameAction> GameActions { get; set; }
     }
 }

@@ -53,16 +53,43 @@
                     <input class="form-check-input" type="radio" name="SelectedCharacter" id="detective" value="Detective">
                     <label class="form-check-label character" for="detective">Detective</label>
                 </div>
+                <div class="target">
+                    <input type="number" placeholder="Target" name="Target" />
+                </div>
                 <div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary target-btn">Submit</button>
                 </div>
             </form>
         </div>
 
         <div id="posts-list">
-
+            @if (Model.GameActions != null && Model.GameActions.Any())
+            {
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Character</th>
+                            <th>Target</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var action in Model.GameActions.OrderByDescending(a => a.TimeStamp))
+                        {
+                            <tr>
+                                <td>@action.Character</td>
+                                <td>@action.TargetSeatNumber</td>
+                                <td>@action.TimeStamp.ToString("HH:mm:ss")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <p>No actions recorded yet.</p>
+            }
         </div>
-    </div>
 
     <div class="player-container">
         <h1>Players</h1>

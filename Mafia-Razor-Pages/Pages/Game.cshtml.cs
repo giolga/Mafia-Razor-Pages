@@ -1,4 +1,5 @@
 using Mafia_Razor_Pages.Data;
+using Mafia_Razor_Pages.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -11,6 +12,10 @@ namespace Mafia_Razor_Pages.Pages
 
         [BindProperty]
         public string SelectedCharacter { get; set; }
+        [BindProperty]
+        public int Target { get; set; }
+
+        public List<GameAction> GameActions { get; set; }
 
         public GameModel(AppDbContext context, ILogger<GameModel> logger)
         {
@@ -20,6 +25,7 @@ namespace Mafia_Razor_Pages.Pages
 
         public IActionResult OnGet()
         {
+            GameActions = _context.GameActions.ToList();
             return Page();
         }
 
@@ -32,24 +38,24 @@ namespace Mafia_Razor_Pages.Pages
                 return Page();
             }
 
-            _logger.LogDebug($"Selected Character: {SelectedCharacter}");
-
-            // Example of doing something with the selected character
-            switch (SelectedCharacter)
+           
+            if(Target <= 0 || Target == null)
             {
-                case "Don":
-                    // Do something for Don
-                    break;
-                case "Mafia":
-                    // Do something for Mafia
-                    break;
-                case "Serial Killer":
-                    // Do something for Serial Killer
-                    break;
-                case "Detective":
-                    // Do something for Detective
-                    break;
+                ModelState.AddModelError(string.Empty, "Please select a valid character!");
+                return Page();
             }
+
+            var newAction = new GameAction
+            {
+                Character = SelectedCharacter,
+                TargetSeatNumber = Target,
+                TimeStamp = DateTime.Now
+            };
+
+            _context.GameActions.Add(newAction);
+            _context.SaveChanges();
+
+            GameActions = _context.GameActions.ToList();
 
             return Page();
         }
