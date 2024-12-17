@@ -15,7 +15,6 @@ namespace Mafia_Razor_Pages.Pages
         [BindProperty]
         public int Target { get; set; }
         public List<GameAction> GameActions { get; set; }
-        public int SerialKillLeft = 2;
 
 
 
@@ -47,6 +46,20 @@ namespace Mafia_Razor_Pages.Pages
                 return Page();
             }
 
+            var characterInTable = _context.GameActions.Where(g => g.Character == SelectedCharacter).ToList();
+
+            if (characterInTable.Any(t => t.TargetSeatNumber == Target) && SelectedCharacter == "Serial Killer") // killer murdered player he can't kill the same player again!
+            {
+                ModelState.AddModelError(string.Empty, $"This character already selected: {Target}");
+                Console.WriteLine($"This character already selected: {Target}");
+                return Page();
+            }
+
+            if(characterInTable.Count == 2 && SelectedCharacter == "Serial Killer") // killer can't kill anymore!
+            {
+                Console.WriteLine("Killer can't kill anymore!");
+                return Page();
+            }
 
 
             var newAction = new GameAction
@@ -55,6 +68,7 @@ namespace Mafia_Razor_Pages.Pages
                 TargetSeatNumber = Target,
                 TimeStamp = DateTime.Now
             };
+
 
             _context.GameActions.Add(newAction);
             _context.SaveChanges();
