@@ -20,5 +20,6 @@ namespace Mafia_Razor_Pages.Models
         public string? Character { get; set; } = null;
         public bool IsFirstLose { get; set; } = false;
         public int NumberOfFouls { get; set; } = 0;
+        public bool Lose { get; set; }
     }
 }
