@@ -114,7 +114,7 @@
             <tbody>
                 @foreach (var player in Model._context.Players)
                 {
-                    <tr>
+                    <tr class="@(player.Lose && (Model.SelectedCharacter == "Mafia" || Model.SelectedCharacter == "Serial Killer") ? "killed" : "")">
                         <td>@player.Id</td>
                         <td>@player.Name</td>
                         <td>@player.Surname</td>

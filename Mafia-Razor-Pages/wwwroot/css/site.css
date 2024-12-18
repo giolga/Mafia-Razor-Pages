@@ -482,3 +482,18 @@ form .button {
     max-height: 300px; /* Adjust the height as needed */
     overflow-y: auto;
 }
+
+
+
+
+
+
+.player-container table tr.killed {
+    text-decoration: line-through;
+    color: #888; /* Optional: make the text gray to further indicate being eliminated */
+    opacity: 0.6; /* Optional: slightly fade out killed players */
+}
+
+    .player-container table tr.killed td {
+        font-style: italic;
+    }
