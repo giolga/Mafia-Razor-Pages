@@ -17,7 +17,6 @@ namespace Mafia_Razor_Pages.Pages
         public List<GameAction> GameActions { get; set; }
 
 
-
         public GameModel(AppDbContext context, ILogger<GameModel> logger)
         {
             _context = context;
@@ -36,14 +35,14 @@ namespace Mafia_Razor_Pages.Pages
             {
                 ModelState.AddModelError(string.Empty, "Please select a character.");
                 Console.WriteLine("EMPTYYYYY");
-                return Page();
+                return RedirectToPage("./Game");
             }
 
 
             if (Target <= 0)
             {
                 ModelState.AddModelError(string.Empty, "Please select a valid character!");
-                return Page();
+                return RedirectToPage("./Game");
             }
 
             var characterInTable = _context.GameActions.Where(g => g.Character == SelectedCharacter).ToList();
@@ -52,13 +51,13 @@ namespace Mafia_Razor_Pages.Pages
             {
                 ModelState.AddModelError(string.Empty, $"This character already selected: {Target}");
                 Console.WriteLine($"This character already selected: {Target}");
-                return Page();
+                return RedirectToPage("");
             }
 
             if ((characterInTable.Count == 2 && SelectedCharacter == "Serial Killer")) // killer can't kill anymore
             {
                 Console.WriteLine("Killer can't kill anymore!");
-                return Page();
+                return RedirectToPage("./Game");
             }
 
 
@@ -81,7 +80,7 @@ namespace Mafia_Razor_Pages.Pages
                 else
                 {
                     Console.WriteLine("Can not heal! Error occured! (DOCTOR ERROR)");
-                    return Page();
+                    return RedirectToPage("./Game");
                 }
             }
             else if(SelectedCharacter == "Mafia" || SelectedCharacter == "Serial Killer")
@@ -94,7 +93,7 @@ namespace Mafia_Razor_Pages.Pages
                 else
                 {
                     Console.WriteLine("Mafia/Killer can't kill! ERROR OCCURED!!!");
-                    return Page();
+                    return RedirectToPage("./Game");
                 }
             }
 
@@ -103,7 +102,7 @@ namespace Mafia_Razor_Pages.Pages
 
             GameActions = _context.GameActions.ToList();
 
-            return Page();
+            return RedirectToPage("./Game");
         }
     }
 }
