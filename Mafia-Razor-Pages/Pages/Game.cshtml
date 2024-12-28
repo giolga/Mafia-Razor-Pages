@@ -3,10 +3,12 @@
 @{
 }
 
+
 @if (!string.IsNullOrEmpty(Model.SelectedCharacter))
 {
     <div class="alert alert-info">@Model.SelectedCharacter</div>
 }
+
 
 
 <div class="game-container">
@@ -58,10 +60,10 @@
                     <label class="form-check-label character" for="doctor">Doctor</label>
                 </div>
                 <div class="target">
-                    <input type="number" placeholder="Target" name="Target" />
+                    <input type="number" placeholder="Target" name="Target" class="input-target" />
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-primary target-btn">Submit</button>
+                    <button type="submit" class="btn btn-primary target-btn game-post-container-btn">Submit</button>
                 </div>
             </form>
         </div>
