@@ -70,6 +70,8 @@ body {
     padding: 20px;
     background-color: #f9f9f9;
     /*overflow-y: auto;*/ /* Add scroll if content overflows */
+
+    display: block;
 }
 
 .character-left-section {
@@ -180,12 +182,16 @@ body {
 .table_body:hover::-webkit-scrollbar-thumb {
     visibility: visible;
 }
-
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 .selection-table {
+    display: block;
+    position: relative;
+    height: 100%;
+
     width: 100%;
     max-width: 100%;
     margin-bottom: 1rem;
-    background-color: #fff;
+    background-color: black;
     border-radius: 0.5rem;
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 }
@@ -235,13 +241,6 @@ body {
     }
 
         .selection-table thead th {
-            /*background-color: #f1f3f5;
-        color: #495057;
-        font-weight: 600;
-        text-transform: uppercase;
-        padding: 0.75rem;
-        border-bottom: 2px solid #dee2e6;*/
-
             position: sticky;
             top: 0;
             /* left: 0; */
@@ -271,6 +270,8 @@ body {
         vertical-align: middle;
         border-bottom: 1px solid #dee2e6;
     }
+
+    /*till here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
