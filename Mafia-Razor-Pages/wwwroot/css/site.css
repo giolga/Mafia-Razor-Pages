@@ -187,7 +187,6 @@ body {
     display: block;
     position: relative;
     height: 100%;
-
     width: 100%;
     max-width: 100%;
     margin-bottom: 1rem;
@@ -271,7 +270,7 @@ body {
         border-bottom: 1px solid #dee2e6;
     }
 
-    /*till here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*till here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -446,11 +445,65 @@ form .button {
     align-items: start;
 }
 
+/*from here*/
 .foul-container {
     width: 40%;
     height: 100%;
     background-color: #2C3E50;
+    overflow-y: auto; /* Ensures scroll if content exceeds container height */
+    box-sizing: border-box;
 }
+
+    .foul-container table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        background-color: #72A0C1;
+        backdrop-filter: blur(7px);
+        box-shadow: 0 .4rem .8rem #0005;
+        border-radius: .3rem;
+        overflow: hidden;
+    }
+
+    .foul-container thead {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+        .foul-container thead th {
+            position: sticky;
+            top: 0;
+            background-color: #002D62;
+            padding: 1rem;
+            text-align: left;
+        }
+
+    .foul-container table, th, td {
+        border-collapse: collapse;
+        padding: 1rem;
+        text-align: left;
+    }
+
+    .foul-container tbody tr {
+        transition: background-color 0.2s ease;
+    }
+
+        .foul-container tbody tr:nth-child(even) {
+            background-color: #0000000b;
+        }
+
+        .foul-container tbody tr:hover {
+            background-color: #fff6;
+        }
+
+    .foul-container tbody td {
+        padding: 0.75rem;
+        vertical-align: middle;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    /*till here*/
 
 .record-container {
     width: 100%;
