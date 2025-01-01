@@ -15,25 +15,27 @@
     <div class="foul-container">
         <h1>Fouls</h1>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Seat Number</th>
-                    <th>Foul</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var player in Model._context.Players)
-                {
+        <div class="foul-table">
+            <table>
+                <thead>
                     <tr>
-                        <td>@player.Id</td>
-                        <td>@player.SeatNumber</td>
-                        <td>@player.NumberOfFouls</td>
+                        <th>Id</th>
+                        <th>Seat Number</th>
+                        <th>Foul</th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach (var player in Model._context.Players)
+                    {
+                        <tr>
+                            <td>@player.Id</td>
+                            <td>@player.SeatNumber</td>
+                            <td>@player.NumberOfFouls</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <div class="record-container">
