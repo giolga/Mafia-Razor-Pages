@@ -105,29 +105,31 @@
     <div class="player-container">
         <h1>Players</h1>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Surname</th>
-                    <th>Character</th>
-                    <th>Seat Number</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var player in Model._context.Players)
-                {
-                    <tr class="@(player.Lose ? "killed" : "")">
-                        <td>@player.Id</td>
-                        <td>@player.Name</td>
-                        <td>@player.Surname</td>
-                        <td>@player.Character</td>
-                        <td>@player.SeatNumber</td>
+        <div class="player-list-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Character</th>
+                        <th>Seat Number</th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach (var player in Model._context.Players)
+                    {
+                        <tr class="@(player.Lose ? "killed" : "")">
+                            <td>@player.Id</td>
+                            <td>@player.Name</td>
+                            <td>@player.Surname</td>
+                            <td>@player.Character</td>
+                            <td>@player.SeatNumber</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
 
 </div>

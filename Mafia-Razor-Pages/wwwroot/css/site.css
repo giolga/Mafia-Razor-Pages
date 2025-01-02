@@ -605,15 +605,25 @@ form .button {
         }
 
 
-
-
-
-.player-container table tr.killed {
-    text-decoration: line-through;
-    color: #888; /* Optional: make the text gray to further indicate being eliminated */
-    opacity: 0.6; /* Optional: slightly fade out killed players */
+.player-list-table {
+    max-height: 50vh;
+    width: 100%;
+    overflow: auto;
 }
 
-    .player-container table tr.killed td {
-        font-style: italic;
+    .player-list-table table {
+        width: 100%;
+        border-collapse: collapse;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
+
+        .player-list-table table tr.killed {
+            text-decoration: line-through;
+            color: #888;
+            opacity: 0.6;
+        }
+
+            .player-list-table table tr.killed td {
+                font-style: italic;
+            }
