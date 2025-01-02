@@ -469,7 +469,7 @@ form .button {
     flex-direction: column;
     /*overflow: hidden;*/
 }
-
+    /**/
     .foul-table table {
         width: 100%;
         border-collapse: separate;
@@ -609,14 +609,36 @@ form .button {
     max-height: 50vh;
     width: 100%;
     overflow: auto;
+    background-color: #2d3748; /* Dark blue/slate background */
+    border-radius: 0.5rem;
+    border: 1px solid hsl(var(--border));
 }
 
     .player-list-table table {
         width: 100%;
-        border-collapse: collapse;
-        overflow-x: hidden;
-        overflow-y: auto;
+        border-collapse: separate;
+        border-spacing: 0;
     }
+
+        .player-list-table table thead {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background-color: #2d3748; /* Match the container background */
+            border-bottom: 1px solid hsl(var(--border));
+        }
+
+            .player-list-table table thead tr {
+                background-color: #2d3748; /* Ensure header row has background */
+            }
+
+            .player-list-table table thead th {
+                padding: 12px;
+                text-align: left;
+                font-weight: 500;
+                border-bottom: 2px solid #4a5568; /* Add visible border under header */
+                background-color: #2d3748; /* Ensure each header cell has background */
+            }
 
         .player-list-table table tr.killed {
             text-decoration: line-through;
@@ -627,3 +649,7 @@ form .button {
             .player-list-table table tr.killed td {
                 font-style: italic;
             }
+
+        .player-list-table table td {
+            padding: 12px;
+        }
