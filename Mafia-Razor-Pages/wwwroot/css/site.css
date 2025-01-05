@@ -172,16 +172,55 @@ body {
     width: 0.5rem;
     height: 0.5rem;
 }
-
 .table_body::-webkit-scrollbar-thumb {
     border-radius: .5rem;
     background-color: #0004;
     visibility: hidden;
 }
-
 .table_body:hover::-webkit-scrollbar-thumb {
     visibility: visible;
 }
+
+.character-insert-section::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+.character-insert-section::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+.character-insert-section:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+.player-list-table::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+.player-list-table::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+.player-list-table:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+.foul-table::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+.foul-table::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+.foul-table:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+
 /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 .selection-table {
     display: block;
@@ -285,7 +324,6 @@ body {
     width: 100%;
     height: 50%;
     margin-top: 2rem;
-    /*background-color: blue;*/
     overflow: auto;
     border-radius: 8px;
 }
