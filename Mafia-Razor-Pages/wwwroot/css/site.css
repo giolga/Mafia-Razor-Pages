@@ -126,29 +126,29 @@ body {
 
 @media screen and (max-width: 750px) {
     .form-container {
-        width: 100%; /* Make it full-width */
-        margin: 0 auto; /* Add some side margin */
+        width: 100%; 
+        margin: 0 auto; 
     }
 
         .form-container input[type="text"] {
-            width: 100%; /* Input takes full width */
+            width: 100%;
         }
 
     .btn {
-        width: 100%; /* Button takes full width */
+        width: 100%;
     }
 
     .character-container {
         display: flex;
         width: 100%;
-        flex-direction: column; /* Stack sections vertically */
-        height: 80vh; /* Full height of the viewport */
+        flex-direction: column;
+        height: 80vh;
     }
 
     .selection-container {
         display: flex;
         width: 100%;
-        flex-direction: column; /* Stack sections vertically */
+        flex-direction: column;
         height: 80vh;
     }
 }
