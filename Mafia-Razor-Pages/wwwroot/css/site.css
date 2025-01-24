@@ -269,6 +269,21 @@ body {
     }
 }
 
+.img-container {
+    width: 100%; /* Matches the width of the column */
+    height: 200px; /* Fixed height for all images */
+    overflow: hidden; /* Ensures any overflow is cropped */
+    position: relative;
+}
+
+.img-fixed {
+    width: 100%; /* Ensures the image fills the container's width */
+    height: 100%; /* Ensures the image fills the container's height */
+    object-fit: cover; /* Maintains aspect ratio while cropping overflow */
+    display: block;
+}
+
+
 .character-img:hover {
     transform: scale(1.05);
 }

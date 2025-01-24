@@ -57,18 +57,23 @@
                     </div>
                 </div>
 
-                @foreach (var image in Model.CharacterImages)
-                {
-                    var imagePath = "~/images/" + image + ".jpg";
-                    string pagePath = $"../Characters/{char.ToUpper(image.ToString()[0]) + image.ToString().Substring(1)}";
+                <div class="row">
+                    @foreach (var image in Model.CharacterImages)
+                    {
+                        var imagePath = $"~/images/{image}.jpg";
+                        string pagePath = $"../Characters/{char.ToUpper(image[0])}{image.Substring(1)}";
 
-                    <div class="col-4 mb-5">
-                        <a class="character-img" asp-area="" asp-page="@pagePath">
-                            <img src="@imagePath" class="img-fixed" asp-append-version="true" />
-                        </a>
-                        <br />
-                    </div>
-                }
+                        <div class="col-6 col-md-4 mb-4">
+                            <a class="character-img" asp-area="" asp-page="@pagePath">
+                                <div class="img-container">
+                                    <img src="@imagePath" class="img-fixed" asp-append-version="true" alt="@image" />
+                                </div>
+                            </a>
+                        </div>
+                    }
+                </div>
+
+
             </div>
         </div>
 
