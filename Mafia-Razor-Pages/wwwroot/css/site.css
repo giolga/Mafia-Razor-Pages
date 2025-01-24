@@ -144,8 +144,8 @@ body {
 
     .btn {
         width: 100%;
-        padding: 12px;
-        background-color: #333;
+        padding: 2px;
+        /*background-color: #333;*/
         color: white;
         border: none;
         border-radius: 4px;
@@ -254,6 +254,20 @@ body {
     }
 }
 
+
+
+@media screen and (max-width: 400px) {
+    .btn {
+        width: 100%;
+        padding: 3px;
+        /*background-color: #333;*/
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+}
 
 .character-img:hover {
     transform: scale(1.05);
