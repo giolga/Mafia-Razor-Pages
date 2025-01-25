@@ -54,15 +54,23 @@
 
     <div class="character-right-section">
         <h1>Nao CHAMA!</h1>
-        @if (Model.MyCharacters != null)
-        {
-            <ul>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Characters</th>
+                </tr>
+            </thead>
+            <tbody>
                 @foreach (var character in Model.MyCharacters)
                 {
-                    <li>@character</li>
+                    <tr>
+                        <td>@character</td>
+                    </tr>
                 }
-            </ul>
-        }
+            </tbody>
+        </table>
+   
         <form method="post">
             <button asp-page-handler="OrganizeCharacters" class="btn btn-primary" type="submit">Organize Characters</button> @*OrganizeCharacters -> OnPostOrganizeCharacters*@
         </form>

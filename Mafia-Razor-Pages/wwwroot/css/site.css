@@ -84,6 +84,56 @@ body {
     color: white;
 }
 
+    .character-right-section table {
+        width: 70%;
+        height: 30%;
+        background-color: #fff5;
+        backdrop-filter: blur(7px);
+        box-shadow: 0 .4rem .8rem #0005;
+        border-radius: .8rem;
+        overflow: hidden;
+        border-collapse: collapse;
+    }
+
+    .character-right-section thead {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+        .character-right-section thead th {
+            position: sticky;
+            top: 0;
+            background-color: #d5d1defe;
+            padding: 1rem;
+            text-align: left;
+        }
+
+    .character-right-section td {
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    .character-right-section tbody tr {
+        transition: background-color 0.2s ease;
+    }
+
+        .character-right-section tbody tr:nth-child(even) {
+            background-color: #0000000b;
+        }
+
+        .character-right-section tbody tr:hover {
+            background-color: #fff6;
+        }
+
+    .character-right-section tbody td {
+        padding: 0.75rem;
+        vertical-align: middle;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+
 .form-container {
     max-width: 750px; /* Limit the form container width */
     margin: 0 auto; /* Center it horizontally */
@@ -270,9 +320,9 @@ body {
 }
 
 .img-container {
-    width: 100%; 
-    height: 200px;  
-    overflow: hidden; 
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
     position: relative;
 }
 
@@ -296,11 +346,13 @@ body {
     width: 0.5rem;
     height: 0.5rem;
 }
+
 .table_body::-webkit-scrollbar-thumb {
     border-radius: .5rem;
     background-color: #0004;
     visibility: hidden;
 }
+
 .table_body:hover::-webkit-scrollbar-thumb {
     visibility: visible;
 }
@@ -309,11 +361,13 @@ body {
     width: 0.5rem;
     height: 0.5rem;
 }
+
 .character-insert-section::-webkit-scrollbar-thumb {
     border-radius: .5rem;
     background-color: #0004;
     visibility: hidden;
 }
+
 .character-insert-section:hover::-webkit-scrollbar-thumb {
     visibility: visible;
 }
@@ -322,11 +376,13 @@ body {
     width: 0.5rem;
     height: 0.5rem;
 }
+
 .player-list-table::-webkit-scrollbar-thumb {
     border-radius: .5rem;
     background-color: #0004;
     visibility: hidden;
 }
+
 .player-list-table:hover::-webkit-scrollbar-thumb {
     visibility: visible;
 }
@@ -335,11 +391,13 @@ body {
     width: 0.5rem;
     height: 0.5rem;
 }
+
 .foul-table::-webkit-scrollbar-thumb {
     border-radius: .5rem;
     background-color: #0004;
     visibility: hidden;
 }
+
 .foul-table:hover::-webkit-scrollbar-thumb {
     visibility: visible;
 }

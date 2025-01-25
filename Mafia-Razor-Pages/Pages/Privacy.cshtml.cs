@@ -33,6 +33,8 @@ namespace Mafia_Razor_Pages.Pages
                         REINDEX Players;
                         REINDEX GameActions;
                     ");
+
+                
             }
             catch (Exception ex)
             {
