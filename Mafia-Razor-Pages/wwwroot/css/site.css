@@ -58,18 +58,17 @@ body {
 .character-container {
     display: flex;
     width: 100%;
-    flex-direction: row; /* Stack sections vertically */
-    height: 80vh; /* Full height of the viewport */
+    flex-direction: row; 
+    height: 80vh;
 }
 
 .character-left-section,
 .character-right-section {
-    flex: 1; /* Each section takes up equal vertical space */
+    flex: 1;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 20px;
     background-color: #f9f9f9;
-    /*overflow-y: auto;*/ /* Add scroll if content overflows */
 
     display: block;
 }
@@ -84,9 +83,8 @@ body {
     color: white;
 }
 
-    .character-right-section table {
+    .character-right-section .table-wrapper table {
         width: 70%;
-        height: 30%;
         background-color: #fff5;
         backdrop-filter: blur(7px);
         box-shadow: 0 .4rem .8rem #0005;
@@ -94,6 +92,13 @@ body {
         overflow: hidden;
         border-collapse: collapse;
     }
+
+    .character-right-section .table-wrapper {
+        max-height: 20rem;
+        overflow-y: auto;
+        display: block;
+    }
+
 
     .character-right-section thead {
         position: sticky;
@@ -504,7 +509,7 @@ body {
 
 .character-insert-section {
     width: 100%;
-    height: 50%;
+    height: 20vh;
     margin-top: 2rem;
     overflow: auto;
     border-radius: 8px;
