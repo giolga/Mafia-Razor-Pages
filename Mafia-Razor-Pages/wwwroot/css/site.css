@@ -69,7 +69,6 @@ body {
     border-radius: 5px;
     padding: 20px;
     background-color: #f9f9f9;
-
     display: block;
 }
 
@@ -79,6 +78,11 @@ body {
 
 .character-right-section {
     /* Optional: Add specific styles for the bottom section */
+    display: flex;
+    flex-direction: column;
+    /*height: 50vh;*/
+    background: white;
+    border-radius: 8px;
     background-color: #333;
     color: white;
 }
@@ -89,22 +93,24 @@ body {
         backdrop-filter: blur(7px);
         box-shadow: 0 .4rem .8rem #0005;
         border-radius: .8rem;
-        overflow: hidden;
+        overflow: auto;
         border-collapse: collapse;
     }
 
     .character-right-section .table-wrapper {
-        max-height: 20rem;
+        width: 100%;
+        max-height: 30rem;
         overflow-y: auto;
+        margin: .8rem auto;
+        border-radius: .6rem;
         display: block;
     }
 
-
-    .character-right-section thead {
-        position: sticky;
-        top: 0;
-        z-index: 10;
-    }
+        .character-right-section thead {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
 
         .character-right-section thead th {
             position: sticky;
