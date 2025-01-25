@@ -270,9 +270,9 @@ body {
 }
 
 .img-container {
-    width: 100%; /* Matches the width of the column */
-    height: 200px; /* Fixed height for all images */
-    overflow: hidden; /* Ensures any overflow is cropped */
+    width: 100%; 
+    height: 200px;  
+    overflow: hidden; 
     position: relative;
 }
 
@@ -281,6 +281,7 @@ body {
     height: 100%; /* Ensures the image fills the container's height */
     object-fit: cover; /* Maintains aspect ratio while cropping overflow */
     display: block;
+    margin: auto;
 }
 
 
@@ -288,13 +289,6 @@ body {
     transform: scale(1.05);
 }
 
-.img-fixed {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    display: block;
-    margin: auto;
-}
 
 /*Selection table responsivnes*/
 
